@@ -1,14 +1,16 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using Xamarin.Forms;
 
 namespace FinalProject
 {
-    public partial class MainPage : TabbedPage
+    public partial class WelcomePage : ContentPage
     {
-        public MainPage()
+        public WelcomePage()
         {
             InitializeComponent();
-            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(MainPage)}:  ctor");
+            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(WelcomePage)}:  ctor");
         }
 
         void OnAppearing(object sender, System.EventArgs e)
@@ -20,5 +22,7 @@ namespace FinalProject
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnDisappearing)}");
         }
+
+       
     }
 }

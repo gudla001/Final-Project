@@ -1,14 +1,16 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using Xamarin.Forms;
 
 namespace FinalProject
 {
-    public partial class MainPage : TabbedPage
+    public partial class Weather : ContentPage
     {
-        public MainPage()
+        public Weather()
         {
             InitializeComponent();
-            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(MainPage)}:  ctor");
+            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(Weather)}:  ctor");
         }
 
         void OnAppearing(object sender, System.EventArgs e)
@@ -19,6 +21,11 @@ namespace FinalProject
         void OnDisappearing(object sender, System.EventArgs e)
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnDisappearing)}");
+        }
+
+        void Handle_Clicked(object sender, System.EventArgs e)
+        {
+            Device.OpenUri(new Uri("https://en.wikipedia.org/wiki/Bulldogt"));
         }
     }
 }
