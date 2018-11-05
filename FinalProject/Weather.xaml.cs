@@ -7,13 +7,32 @@ namespace FinalProject
 {
     public partial class Weather : ContentPage
     {
+        RestService _restService;
         public Weather()
         {
             InitializeComponent();
+            _restService = new RestService();
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(Weather)}:  ctor");
         }
+        async void OnGetWeatherButtonClicked(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(_cityEntry.Text))
+            {
+                WeatherData weatherData = await _restService.GetWeatherData(GenerateRequestUri(Constants.OpenWeatherMapEndpoint));
+                BindingContext = weatherData;
+            }
+        }
 
-        void OnAppearing(object sender, System.EventArgs e)
+        string GenerateRequestUri(string endpoint)
+        {
+            string requestUri = endpoint;
+            requestUri += $"?q={_cityEntry.Text}";
+            requestUri += "&units=imperial"; // or units=metric
+            requestUri += $"&APPID={Constants.OpenWeatherMapAPIKey}";
+            return requestUri;
+        }
+
+void OnAppearing(object sender, System.EventArgs e)
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnAppearing)}");
         }
@@ -21,11 +40,6 @@ namespace FinalProject
         void OnDisappearing(object sender, System.EventArgs e)
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnDisappearing)}");
-        }
-
-        void Handle_Clicked(object sender, System.EventArgs e)
-        {
-            Device.OpenUri(new Uri("https://en.wikipedia.org/wiki/Bulldogt"));
         }
     }
 }
