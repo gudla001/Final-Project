@@ -85,11 +85,11 @@ namespace FinalProject
         }
         void dogClicked(object sender, System.EventArgs e)
         {
-
+            Device.OpenUri(new Uri("https://en.wikipedia.org/wiki/Dog"));
         }
         void catClicked(object sender, System.EventArgs e)
         {
-
+            Device.OpenUri(new Uri("https://en.wikipedia.org/wiki/Cat"));
         }
 
 
