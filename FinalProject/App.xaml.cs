@@ -1,7 +1,8 @@
 ﻿using System;
+using System.Diagnostics;
+using System.IO;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using System.Diagnostics;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace FinalProject
@@ -13,6 +14,18 @@ namespace FinalProject
             InitializeComponent();
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(App)}:  ctor");
             MainPage = new MainPage();
+        }
+        static StudentDatabase database;
+        public static StudentDatabase Database
+        {
+            get
+            {
+                if (database == null)
+                {
+                    database = new StudentDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "StudentSQLite.db3"));
+                }
+                return database;
+            }
         }
 
         protected override void OnStart()

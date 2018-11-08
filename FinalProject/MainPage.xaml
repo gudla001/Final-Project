@@ -6,10 +6,11 @@
     x:Class="FinalProject.MainPage"
     Appearing="OnAppearing"
     Disappearing="OnDisappearing">
+   
     <local:WelcomePage
         Title="Home"/>
     <local:Weather
         Title="Weather"/>
-    <local:Sports
-        Title="Sports"/>
+    <local:Animals
+        Title="Animals"/>
 </TabbedPage>

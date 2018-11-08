@@ -1,5 +1,27 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FinalProject.Animals">
-    <ContentPage.Content>
-    </ContentPage.Content>
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FinalProject.Animals"
+             BackgroundColor="Silver">
+    
+          
+
+    <StackLayout>
+     <Image
+            Grid.Row="0"
+            x:Name="DoggyPic"
+            VerticalOptions="FillAndExpand"
+            HorizontalOptions="FillAndExpand" />
+        
+    <Label Text="Are you a dog person or a cat person?" BackgroundColor="White" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="20" TextColor="Purple"/>
+    <Picker x:Name="MainPicker"
+            Title="Select one"
+            BackgroundColor="White"
+            SelectedIndexChanged="Handle_SelectedIndexChanged"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="CenterAndExpand"
+            TextColor="Black"
+            FontSize="Large"
+            FontAttributes="Bold"/>
+        <Button Text="Informations about dogs" Clicked="dogClicked"/>
+        <Button Text="Informations about cats" Clicked="catClicked"/>
+ </StackLayout>       
 </ContentPage>
