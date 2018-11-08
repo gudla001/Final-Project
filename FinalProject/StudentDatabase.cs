@@ -1,28 +1,37 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using SQLite;
+
 namespace FinalProject
 {
-    public class StudentDataBase
+    public class StudentDatabase
     {
         readonly SQLiteAsyncConnection database;
 
-        public StudentDataBase(string path)
+
+        public StudentDatabase(string dbPath)
         {
-            database = new SQLiteAsyncConnection(path);
-            database.CreateTableAsync<Student>().Wait();
+            database = new SQLiteAsyncConnection(dbPath);
+            database.CreateTableAsync<StudentModel>().Wait();
         }
-        public Task<int> InsertStudentIntoDatabase(Student student)
+
+
+        public Task<int> SaveItemAsync(StudentModel item)
         {
-            if (student.Id != 0)
+            if (item.ID != 0)
             {
-                return database.UpdateAsync(student);
+                return database.UpdateAsync(item);
             }
-            return database.InsertAsync(student);
+            else
+            {
+                return database.InsertAsync(item);
+            }
         }
-        public Task<List><Student> GetAllStudents()
+
+        public Task<List<StudentModel>> GetAllItems()
         {
-            return database.QueryAsync<Student>("SELECT * FROM");
+            return database.QueryAsync<StudentModel>("SELECT * FROM [StudentModel]");
         }
     }
 }

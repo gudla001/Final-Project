@@ -2,13 +2,23 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:FinalProject" x:Class="FinalProject.WelcomePage"
     Appearing="OnAppearing"
     Disappearing="OnDisappearing">
-    <ContentPage.Content>
-        <StackLayout
-            HorizontalOptions="Center"
-            VerticalOptions="Center">
-            <Label RotationX="30" Text="This is the welcome page"/>
-            
-       
-            </StackLayout>
-    </ContentPage.Content>
+   <StackLayout
+        VerticalOptions="Center"
+        HorizontalOptions="Center">
+        <Label Margin="90" Text="Task Reminder" HorizontalOptions="Center"/>
+        <Entry
+            x:Name="nameEntry"
+            Placeholder="Your Name" />
+        <Entry
+            x:Name="classEntry"
+            Placeholder="Phone number i.e: 7602728054" />
+        <Entry  HeightRequest="200"
+            x:Name="gradeEntry"
+            Placeholder="Text" />
+        <Button
+            Text="Get Reminder"
+            Clicked="Handle_SendStudentDataToDatabase" />
+        
+        
+    </StackLayout>
 </ContentPage>
