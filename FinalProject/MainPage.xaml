@@ -8,7 +8,7 @@
     Disappearing="OnDisappearing">
    
     <local:WelcomePage
-        Title="Home"/>
+        Title="Reminder"/>
     <local:Weather
         Title="Weather"/>
     <local:Animals

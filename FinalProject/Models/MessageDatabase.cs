@@ -5,19 +5,19 @@ using SQLite;
 
 namespace FinalProject
 {
-    public class StudentDatabase
+    public class MessageDatabase
     {
         readonly SQLiteAsyncConnection database;
 
 
-        public StudentDatabase(string dbPath)
+        public MessageDatabase(string dbPath)
         {
             database = new SQLiteAsyncConnection(dbPath);
-            database.CreateTableAsync<StudentModel>().Wait();
+            database.CreateTableAsync<MessageModel>().Wait();
         }
 
 
-        public Task<int> SaveItemAsync(StudentModel item)
+        public Task<int> SaveItemAsync(MessageModel item)
         {
             if (item.ID != 0)
             {
@@ -29,9 +29,9 @@ namespace FinalProject
             }
         }
 
-        public Task<List<StudentModel>> GetAllItems()
+        public Task<List<MessageModel>> GetAllItems()
         {
-            return database.QueryAsync<StudentModel>("SELECT * FROM [StudentModel]");
+            return database.QueryAsync<MessageModel>("SELECT * FROM [StudentModel]");
         }
     }
 }

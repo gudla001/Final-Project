@@ -15,14 +15,14 @@ namespace FinalProject
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(App)}:  ctor");
             MainPage = new MainPage();
         }
-        static StudentDatabase database;
-        public static StudentDatabase Database
+        static MessageDatabase database;
+        public static MessageDatabase Database
         {
             get
             {
                 if (database == null)
                 {
-                    database = new StudentDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "StudentSQLite.db3"));
+                    database = new MessageDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "StudentSQLite.db3"));
                 }
                 return database;
             }

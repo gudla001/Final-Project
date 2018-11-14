@@ -22,16 +22,16 @@ namespace FinalProject
         async void Handle_SendStudentDataToDatabase(object sender, System.EventArgs e)
         {
 
-            var student = new StudentModel
+            var msg = new MessageModel
             {
                 Name = nameEntry.Text,
-                Class = classEntry.Text,
-                Grade = gradeEntry.Text
+                Number = classEntry.Text,
+                Body = gradeEntry.Text
             };
 
 
 
-            await App.Database.SaveItemAsync(student);
+            await App.Database.SaveItemAsync(msg);
 
 
         
@@ -43,9 +43,9 @@ namespace FinalProject
         TwilioClient.Init(accountSid, authToken);
 
             var message = MessageResource.Create(
-                body: "Dear: " + student.Name +" remember to: "+ student.Grade,
+                body: "Dear: " + msg.Name +" remember to: "+ msg.Body,
                 from: new Twilio.Types.PhoneNumber("+19738418619"),
-                to: new Twilio.Types.PhoneNumber('"'+"+1"+student.Class+'"')
+                to: new Twilio.Types.PhoneNumber('"'+"+1"+msg.Number+'"')
             );
 
         Console.WriteLine(message.Sid);

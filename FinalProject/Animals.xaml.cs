@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using Plugin.Connectivity;
 using Xamarin.Forms;
 
 
@@ -33,6 +34,10 @@ namespace FinalProject
 
 
 
+        }
+        public bool DoIHaveInternet()
+        {
+            return CrossConnectivity.Current.IsConnected;
         }
 
         void Handle_SelectedIndexChanged(object sender, System.EventArgs e)

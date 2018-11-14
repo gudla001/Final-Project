@@ -11,7 +11,7 @@
             VerticalOptions="FillAndExpand"
             HorizontalOptions="FillAndExpand" />
         
-    <Label Text="Are you a dog person or a cat person?" BackgroundColor="White" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="20" TextColor="Purple"/>
+    <Label Text="Are you a dog person or a cat person?" BackgroundColor="White" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="20" TextColor="Black"/>
     <Picker x:Name="MainPicker"
             Title="Select one"
             BackgroundColor="White"

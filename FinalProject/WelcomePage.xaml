@@ -3,12 +3,14 @@
     Appearing="OnAppearing"
     Disappearing="OnDisappearing">
    <StackLayout
+        
         VerticalOptions="Center"
         HorizontalOptions="Center">
-        <Label Margin="90" Text="Task Reminder" HorizontalOptions="Center"/>
+        <Label Margin="90" FontAttributes="Bold" FontSize="Large" HeightRequest="50" BackgroundColor="White" Text="Task Reminder" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+     
         <Entry
             x:Name="nameEntry"
-            Placeholder="Your Name" />
+            Placeholder="Your Name"/>
         <Entry
             x:Name="classEntry"
             Placeholder="Phone number i.e: 7602728054" />
@@ -17,7 +19,7 @@
             Placeholder="Text" />
         <Button
             Text="Get Reminder"
-            Clicked="Handle_SendStudentDataToDatabase" />
+            Clicked="Handle_SendStudentDataToDatabase" BackgroundColor="White" />
         
         
     </StackLayout>

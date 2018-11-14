@@ -17,5 +17,14 @@
     <Compile Remove="Sports.cs" />
     <Compile Remove="EmptyClass.cs" />
     <Compile Remove="MessageModel.cs" />
+    <Compile Remove="LongToDateTimeConverter.cs" />
+    <Compile Remove="MessageModel.cs" />
+    <Compile Remove="Sports.xaml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="Sports.xaml" />
   </ItemGroup>
 </Project>
