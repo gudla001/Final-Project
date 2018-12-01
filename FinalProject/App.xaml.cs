@@ -13,7 +13,8 @@ namespace FinalProject
         {
             InitializeComponent();
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(App)}:  ctor");
-            MainPage = new MainPage();
+            MainPage = new LoginPage();
+            //MainPage = new MainPage();
         }
         static MessageDatabase database;
         public static MessageDatabase Database

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:local="clr-namespace:FinalProject" 
+    x:Class="FinalProject.LoginPage"
+    Appearing="OnAppearing"
+    Disappearing="OnDisappearing"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    ios:Page.UseSafeArea="true">
+    <ContentView x:Name="contentView" Padding="0,10,0,0" ControlTemplate="{StaticResource TealTemplate}">
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <Label Text="Welcome!" HorizontalOptions="Center" />
+            <Label Text="________________________________________" HorizontalOptions="Center" />
+            <Label Text="Check the weather" HorizontalOptions="Center" />
+            <Label Text="Get reminders" HorizontalOptions="Center" />
+            <Label Text="or just browse through pictures!" HorizontalOptions="Center" />
+            <Label Text="________________________________________" HorizontalOptions="Center" />
+            <Button Text="Black/Blue theme" Clicked="OnButtonClicked" />
+            <Button Text="Get started" Clicked="Handle_Clicked12Async"/>
+        </StackLayout>
+    </ContentView></ContentPage>
+    

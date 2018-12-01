@@ -8,9 +8,15 @@
     Disappearing="OnDisappearing">
    
     <local:WelcomePage
+        Icon="phone-icon.png"
         Title="Reminder"/>
     <local:Weather
+        Icon="star.png"
         Title="Weather"/>
     <local:Animals
+        Icon="icon_smile.png"
         Title="Animals"/>
+    <local:Logout
+        Title="Exit"
+        />
 </TabbedPage>

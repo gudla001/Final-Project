@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:FinalProject" x:Class="FinalProject.WelcomePage"
     Appearing="OnAppearing"
-    Disappearing="OnDisappearing">
+    Disappearing="OnDisappearing"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    ios:Page.UseSafeArea="true">
+    <ContentView x:Name="contentView" Padding="0,20,0,0" ControlTemplate="{StaticResource TealTemplate}">
    <StackLayout
         
         VerticalOptions="Center"
@@ -14,7 +17,7 @@
         <Entry
             x:Name="classEntry"
             Placeholder="Phone number i.e: 7602728054" />
-        <Entry  HeightRequest="200"
+        <Entry  HeightRequest="100"
             x:Name="gradeEntry"
             Placeholder="Text" />
         <Button
@@ -23,4 +26,5 @@
         
         
     </StackLayout>
+        </ContentView>
 </ContentPage>

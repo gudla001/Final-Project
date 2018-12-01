@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FinalProject.Animals"
-             Padding="2">
-    
-          
-
+              
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    ios:Page.UseSafeArea="true">
+<ContentView x:Name="contentView" Padding="0,20,0,0" ControlTemplate="{StaticResource TealTemplate}">            
     <StackLayout>
      <Image
             Grid.Row="0"
@@ -23,5 +23,6 @@
             FontAttributes="Bold"/>
         <Button Text="Informations about dogs" Clicked="dogClicked"/>
         <Button Text="Informations about cats" Clicked="catClicked"/>
- </StackLayout>       
+ </StackLayout> 
+        </ContentView>
 </ContentPage>
