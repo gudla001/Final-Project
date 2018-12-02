@@ -10,12 +10,10 @@ namespace FinalProject
     {
         public Logout()
         {
-            //InitializeComponent();
+            InitializeComponent();
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(Logout)}:  ctor");
-           
 
-                Thread.CurrentThread.Abort();
-           
+         
         }
 
       
@@ -23,6 +21,13 @@ namespace FinalProject
         void OnAppearing(object sender, System.EventArgs e)
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnAppearing)}");
+            Device.StartTimer(TimeSpan.FromSeconds(3), () =>
+            {
+               Thread.CurrentThread.Abort();
+
+                return true; // True = Repeat again, False = Stop the timer
+            });
+
         }
 
         void OnDisappearing(object sender, System.EventArgs e)

@@ -164,8 +164,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\icon_smile.png" />
-    <BundleResource Include="Resources\phone-icon.png" />
+    <BundleResource Include="Resources\iconsmile.png" />
+    <BundleResource Include="Resources\phoneicon.png" />
     <BundleResource Include="Resources\star.png" />
+    <BundleResource Include="Resources\x.png" />
+    <BundleResource Include="Resources\200.gif" />
   </ItemGroup>
 </Project>

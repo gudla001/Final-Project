@@ -14,7 +14,10 @@
             <Label Text="" HorizontalOptions="Center" />
             <Label Text="Bye Bye" HorizontalOptions="Center" />
             <Label Text="" HorizontalOptions="Center" />
+            <Image Source="200.gif"/>
             <Label Text="________________________________________" HorizontalOptions="Center" />
+            
+            
             
         </StackLayout>
         </ContentView>
